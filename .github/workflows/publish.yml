@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
 
       - name: Retrieve dependencies from cache
-        uses: actions/cache@v3
+        uses: actions/cache@6f8efc29b200d32929f49075959781ed54ec270c # v3
         id: cacheNpm
         with:
           path: |
@@ -25,7 +25,7 @@ jobs:
           key: npm-v16-${{ runner.os }}-${{ github.ref }}-${{ hashFiles('package.json') }}
 
       - name: Install Node.js and npm
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
         with:
           node-version: 16.x
           registry-url: https://registry.npmjs.org
@@ -61,10 +61,10 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.USER_GITHUB_TOKEN }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
 
       - name: Retrieve dependencies from cache
-        uses: actions/cache@v3
+        uses: actions/cache@6f8efc29b200d32929f49075959781ed54ec270c # v3
         id: cacheNpm
         with:
           path: |
@@ -73,7 +73,7 @@ jobs:
           key: npm-v16-${{ runner.os }}-refs/heads/main-${{ hashFiles('package.json') }}
 
       - name: Install Node.js and npm
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
         with:
           node-version: 16.x
           registry-url: https://registry.npmjs.org
@@ -117,10 +117,10 @@ jobs:
       CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
 
       - name: Retrieve dependencies from cache
-        uses: actions/cache@v3
+        uses: actions/cache@6f8efc29b200d32929f49075959781ed54ec270c # v3
         with:
           path: |
             ~/.npm
@@ -128,7 +128,7 @@ jobs:
           key: npm-v16-${{ runner.os }}-refs/heads/main-${{ hashFiles('package.json') }}
 
       - name: Install Node.js and npm
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
         with:
           node-version: 16.x
           registry-url: https://registry.npmjs.org
